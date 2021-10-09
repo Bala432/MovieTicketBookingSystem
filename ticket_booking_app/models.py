@@ -35,6 +35,7 @@ class ShowTime(models.Model):
 class BookSeats(models.Model):
     book_seat = models.OneToOneField(ShowTime,on_delete=models.CASCADE)
     max_seats = models.PositiveIntegerField()
+    booked_seats = models.PositiveIntegerField()
     available_seats = models.PositiveIntegerField()
 
     def __str__(self):
