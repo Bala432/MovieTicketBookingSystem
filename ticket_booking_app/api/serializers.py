@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ticket_booking_app.models import Movie, ShowTime
+from ticket_booking_app.models import Movie, ShowTime, BookSeats
 
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,3 +11,8 @@ class ShowTimeSerializer(serializers.ModelSerializer):
     class Meta:
         model = ShowTime
         fields = ('cinema_name','show_time')
+
+class BookSeatsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BookSeats
+        fields = ['max_seats','booked_seats','available_seats']
